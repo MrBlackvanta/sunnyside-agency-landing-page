@@ -1,0 +1,109 @@
+@import "tailwindcss";
+@source not "../../*.md";
+@source not "../**/*.test.ts";
+@source not "../**/*.test.tsx";
+@source not "../test";
+
+@theme {
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+
+  --color-cream: #fffcf8;
+  --color-ink: #24303e;
+  --color-copy: #6f7288;
+  --color-quote-ink: #5b636d;
+  --color-muted: #707479;
+  --color-yellow: #fad400;
+  --color-red: #fe7766;
+  --color-graphic: #224f45;
+  --color-photo: #185069;
+  --color-sky: #3ebfff;
+  --color-scrim: --alpha(#000000 / 20%);
+  --color-mint: #90d4c6;
+  --color-mint-ink: #2c5a51;
+  --color-mint-mark: #2c7566;
+  --color-mint-deep: #123a32;
+
+  --text-hero: 2.5rem;
+  --text-hero--line-height: 1.22;
+  --text-hero--letter-spacing: 0.15625em;
+  --text-hero--font-weight: 900;
+
+  --text-hero-lg: 3.5rem;
+  --text-hero-lg--line-height: 1.22;
+  --text-hero-lg--letter-spacing: 0.15625em;
+  --text-hero-lg--font-weight: 900;
+
+  --text-title: 2rem;
+  --text-title--line-height: 1.22;
+  --text-title--font-weight: 900;
+
+  --text-title-lg: 2.5rem;
+  --text-title-lg--line-height: 1.22;
+  --text-title-lg--font-weight: 900;
+
+  --text-service: 1.75rem;
+  --text-service--line-height: 1.25;
+  --text-service--font-weight: 900;
+
+  --text-eyebrow: 1rem;
+  --text-eyebrow--line-height: 1.25;
+  --text-eyebrow--letter-spacing: 0.25em;
+  --text-eyebrow--font-weight: 900;
+
+  --text-eyebrow-lg: 1.25rem;
+  --text-eyebrow-lg--line-height: 1.25;
+  --text-eyebrow-lg--letter-spacing: 0.25em;
+  --text-eyebrow-lg--font-weight: 900;
+
+  --text-name: 1.125rem;
+  --text-name--line-height: 1.22;
+  --text-name--font-weight: 900;
+
+  --text-action: 0.9375rem;
+  --text-action--line-height: 1.5625rem;
+  --text-action--letter-spacing: 0.0667em;
+  --text-action--font-weight: 900;
+
+  --text-pill: 0.9375rem;
+  --text-pill--line-height: 1.5625rem;
+  --text-pill--font-weight: 700;
+
+  --text-body: 1.125rem;
+  --text-body--line-height: 1.875rem;
+  --text-body--font-weight: 600;
+
+  --text-quote: 1.125rem;
+  --text-quote--line-height: 2rem;
+  --text-quote--font-weight: 600;
+
+  --text-lead: 1rem;
+  --text-lead--line-height: 1.6875rem;
+  --text-lead--font-weight: 600;
+
+  --text-role: 0.875rem;
+  --text-role--line-height: 1.5625rem;
+  --text-role--font-weight: 600;
+
+  --text-nav: 1.1875rem;
+  --text-nav--line-height: 1.5625rem;
+  --text-nav--font-weight: 700;
+
+  --text-menu: 1.25rem;
+  --text-menu--line-height: 1.5625rem;
+  --text-menu--font-weight: 600;
+}
+
+@layer base {
+  html {
+    overflow-y: scroll;
+  }
+
+  body {
+    @apply bg-cream text-copy font-sans;
+  }
+
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
