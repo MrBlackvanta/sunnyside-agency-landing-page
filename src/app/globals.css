@@ -125,8 +125,6 @@
   body {
     @apply bg-cream text-copy font-sans;
     position: relative;
-    max-width: var(--container-shell);
-    margin-inline: auto;
   }
 
   button:not(:disabled) {

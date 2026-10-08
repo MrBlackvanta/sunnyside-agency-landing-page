@@ -1,5 +1,11 @@
 import { SiteHeader } from "@/components/layout";
-import { FeatureRows, Hero, ServicePanels, Testimonials } from "@/views/home";
+import {
+  FeatureRows,
+  Gallery,
+  Hero,
+  ServicePanels,
+  Testimonials,
+} from "@/views/home";
 
 export default function Home() {
   return (
@@ -10,6 +16,7 @@ export default function Home() {
         <FeatureRows />
         <ServicePanels />
         <Testimonials />
+        <Gallery />
       </main>
     </>
   );

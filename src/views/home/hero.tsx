@@ -4,8 +4,8 @@ import { ArrowDownIcon } from "@/components/icons";
 
 export default function Hero() {
   return (
-    <section className="v-hero-band relative isolate">
-      <picture>
+    <section className="v-hero-band bg-sky relative isolate">
+      <picture className="max-w-shell absolute inset-0 mx-auto block">
         <source
           media="(min-width: 48rem)"
           srcSet={headerDesktop.src}
@@ -19,7 +19,7 @@ export default function Hero() {
           alt=""
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 size-full object-cover"
+          className="size-full object-cover"
         />
       </picture>
       <div className="bg-scrim absolute inset-0" />

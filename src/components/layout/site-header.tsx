@@ -5,7 +5,7 @@ import NavLinks from "./nav-links";
 
 export default function SiteHeader() {
   return (
-    <header className="absolute inset-x-0 top-0 z-10 flex items-center px-6 pt-8 lg:px-10 lg:pt-8.5">
+    <header className="max-w-shell absolute inset-x-0 top-0 z-10 mx-auto flex items-center px-6 pt-8 lg:px-10 lg:pt-8.5">
       <SunnysideLogo
         role="img"
         aria-hidden={undefined}
