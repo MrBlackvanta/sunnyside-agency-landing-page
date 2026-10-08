@@ -9,7 +9,7 @@ export default function Testimonials() {
 
       <ul className="max-w-page mx-auto mt-16 grid gap-16 lg:mt-20.25 lg:grid-cols-3 lg:gap-7.5">
         {testimonials.map(({ quote, name, role, avatar }) => (
-          <li key={name} className="max-w-87.5 mx-auto">
+          <li key={name} className="mx-auto max-w-87.5">
             <figure className="flex flex-col items-center text-center">
               <img
                 src={avatar.src}

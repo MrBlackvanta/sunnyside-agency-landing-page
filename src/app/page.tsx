@@ -1,4 +1,4 @@
-import { SiteHeader } from "@/components/layout";
+import { SiteFooter, SiteHeader } from "@/components/layout";
 import {
   FeatureRows,
   Gallery,
@@ -18,6 +18,7 @@ export default function Home() {
         <Testimonials />
         <Gallery />
       </main>
+      <SiteFooter />
     </>
   );
 }

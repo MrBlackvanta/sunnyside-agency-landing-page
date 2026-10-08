@@ -40,9 +40,9 @@ describe("Testimonials", () => {
 
     expect(portraits).toHaveLength(testimonials.length);
     expect(screen.queryAllByRole("img")).toHaveLength(0);
-    expect(portraits.map((portrait) => portrait.getAttribute("loading"))).toEqual(
-      portraits.map(() => "lazy"),
-    );
+    expect(
+      portraits.map((portrait) => portrait.getAttribute("loading")),
+    ).toEqual(portraits.map(() => "lazy"));
   });
 
   it("reserves room for every portrait", () => {

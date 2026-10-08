@@ -1,4 +1,4 @@
-# Sunnyside agency landing page
+# sunnyside
 
 My solution to the [Sunnyside agency landing page](https://www.frontendmentor.io/challenges/agency-landing-page-7yVs3B6ef) challenge on Frontend Mentor.
 

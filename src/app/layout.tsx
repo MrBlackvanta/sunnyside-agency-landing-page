@@ -26,7 +26,7 @@ const shareImage = {
   url: "/opengraph-image.jpg",
   width: 1200,
   height: 630,
-  alt: "The sunnyside wordmark beside a halved orange on a bright blue ground.",
+  alt: "A halved orange against a bright blue sky beside the sunnyside wordmark.",
 };
 
 export const metadata: Metadata = {

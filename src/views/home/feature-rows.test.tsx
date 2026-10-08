@@ -27,7 +27,9 @@ describe("FeatureRows", () => {
     const { container } = render(<FeatureRows />);
 
     expect(
-      [...container.querySelectorAll("img")].map((photo) => photo.getAttribute("loading")),
+      [...container.querySelectorAll("img")].map((photo) =>
+        photo.getAttribute("loading"),
+      ),
     ).toEqual(["eager", "lazy"]);
   });
 

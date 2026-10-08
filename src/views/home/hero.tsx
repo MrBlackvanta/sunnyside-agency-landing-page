@@ -4,7 +4,7 @@ import { ArrowDownIcon } from "@/components/icons";
 
 export default function Hero() {
   return (
-    <section className="v-hero-band bg-sky relative isolate">
+    <section className="v-hero-band bg-sky relative">
       <picture className="max-w-shell absolute inset-0 mx-auto block">
         <source
           media="(min-width: 48rem)"

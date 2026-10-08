@@ -41,6 +41,9 @@ describe("ServicePanels", () => {
   it("answers the Services link in the navigation", () => {
     const { container } = render(<ServicePanels />);
 
-    expect(container.querySelector("section")).toHaveAttribute("id", "services");
+    expect(container.querySelector("section")).toHaveAttribute(
+      "id",
+      "services",
+    );
   });
 });

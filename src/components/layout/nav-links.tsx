@@ -1,8 +1,12 @@
 import { navLinks } from "@/data";
 
-type NavLinksVariant = "header" | "menu";
+type NavLinksVariant = "footer" | "header" | "menu";
 
 const variants: Record<NavLinksVariant, { list: string; link: string }> = {
+  footer: {
+    list: "flex items-center gap-14.25",
+    link: "text-footer-nav v-focus hover:text-mint-deep motion-safe:transition-colors",
+  },
   header: {
     list: "hidden items-center gap-11.75 lg:flex",
     link: "text-nav v-bar v-focus-on-photo text-white",
