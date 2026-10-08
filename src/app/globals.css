@@ -24,6 +24,13 @@
   --color-mint-mark: #2c7566;
   --color-mint-deep: #123a32;
 
+  --breakpoint-xs: 23.4375rem;
+
+  --text-hero-sm: 2rem;
+  --text-hero-sm--line-height: 1.22;
+  --text-hero-sm--letter-spacing: 0.15625em;
+  --text-hero-sm--font-weight: 900;
+
   --text-hero: 2.5rem;
   --text-hero--line-height: 1.22;
   --text-hero--letter-spacing: 0.15625em;
@@ -106,4 +113,25 @@
   button:not(:disabled) {
     @apply cursor-pointer;
   }
+}
+
+@utility v-focus {
+  @apply focus-visible:outline-ink focus-visible:outline-2 focus-visible:outline-offset-4;
+}
+
+@utility v-focus-on-photo {
+  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white;
+}
+
+@utility v-hero-band {
+  height: clamp(33.625rem, 25vw + 27.5rem, 50rem);
+}
+
+@utility v-menu-card {
+  width: 20.5625rem;
+  max-width: calc(100% - 2.875rem);
+}
+
+@utility v-bar {
+  @apply relative after:absolute after:inset-x-0 after:-bottom-1.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-current hover:after:scale-x-100 motion-safe:after:transition-transform motion-safe:after:duration-200;
 }
