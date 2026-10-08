@@ -76,7 +76,7 @@ export default function MobileMenu() {
             open ? "scale-100" : "scale-96"
           }`}
         >
-          <div className="bg-cream absolute -top-6 right-0 size-6 [clip-path:polygon(100%_0,100%_100%,0_100%)]" />
+          <div className="bg-cream absolute -top-6 right-0 h-6.25 w-6 [clip-path:polygon(100%_0,100%_100%,0_100%)]" />
           <NavLinks variant="menu" onNavigate={close} />
           <ContactLink variant="menu" onNavigate={close} />
         </div>

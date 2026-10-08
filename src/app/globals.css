@@ -26,6 +26,11 @@
 
   --breakpoint-xs: 23.4375rem;
 
+  --container-page: 69.375rem;
+  --container-shell: 90rem;
+
+  --tracking-base: -0.00714em;
+
   --text-hero-sm: 2rem;
   --text-hero-sm--line-height: 1.22;
   --text-hero-sm--letter-spacing: 0.15625em;
@@ -43,14 +48,17 @@
 
   --text-title: 2rem;
   --text-title--line-height: 1.22;
+  --text-title--letter-spacing: var(--tracking-base);
   --text-title--font-weight: 900;
 
   --text-title-lg: 2.5rem;
   --text-title-lg--line-height: 1.22;
+  --text-title-lg--letter-spacing: var(--tracking-base);
   --text-title-lg--font-weight: 900;
 
   --text-service: 1.75rem;
   --text-service--line-height: 1.25;
+  --text-service--letter-spacing: var(--tracking-base);
   --text-service--font-weight: 900;
 
   --text-eyebrow: 1rem;
@@ -65,6 +73,7 @@
 
   --text-name: 1.125rem;
   --text-name--line-height: 1.22;
+  --text-name--letter-spacing: var(--tracking-base);
   --text-name--font-weight: 900;
 
   --text-action: 0.9375rem;
@@ -74,30 +83,37 @@
 
   --text-pill: 0.9375rem;
   --text-pill--line-height: 1.5625rem;
+  --text-pill--letter-spacing: var(--tracking-base);
   --text-pill--font-weight: 700;
 
   --text-body: 1.125rem;
   --text-body--line-height: 1.875rem;
+  --text-body--letter-spacing: var(--tracking-base);
   --text-body--font-weight: 600;
 
   --text-quote: 1.125rem;
   --text-quote--line-height: 2rem;
+  --text-quote--letter-spacing: var(--tracking-base);
   --text-quote--font-weight: 600;
 
   --text-lead: 1rem;
   --text-lead--line-height: 1.6875rem;
+  --text-lead--letter-spacing: var(--tracking-base);
   --text-lead--font-weight: 600;
 
   --text-role: 0.875rem;
   --text-role--line-height: 1.5625rem;
+  --text-role--letter-spacing: var(--tracking-base);
   --text-role--font-weight: 600;
 
   --text-nav: 1.1875rem;
   --text-nav--line-height: 1.5625rem;
+  --text-nav--letter-spacing: var(--tracking-base);
   --text-nav--font-weight: 700;
 
   --text-menu: 1.25rem;
   --text-menu--line-height: 1.5625rem;
+  --text-menu--letter-spacing: var(--tracking-base);
   --text-menu--font-weight: 600;
 }
 
@@ -108,6 +124,9 @@
 
   body {
     @apply bg-cream text-copy font-sans;
+    position: relative;
+    max-width: var(--container-shell);
+    margin-inline: auto;
   }
 
   button:not(:disabled) {
@@ -134,4 +153,16 @@
 
 @utility v-bar {
   @apply relative after:absolute after:inset-x-0 after:-bottom-1.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-current hover:after:scale-x-100 motion-safe:after:transition-transform motion-safe:after:duration-200;
+}
+
+@utility v-row-text-start {
+  padding-inline: max(2.5rem, 100% - var(--container-page) / 2) 2.5rem;
+}
+
+@utility v-row-text-end {
+  padding-inline: 2.5rem max(2.5rem, 100% - var(--container-page) / 2);
+}
+
+@utility v-learn-more {
+  @apply relative isolate px-2 after:absolute after:inset-x-0 after:bottom-0 after:-z-10 after:h-2.5 after:rounded-full motion-safe:after:transition-colors motion-safe:after:duration-200;
 }
