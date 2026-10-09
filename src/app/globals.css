@@ -17,6 +17,10 @@
   --color-red: #fe7766;
   --color-graphic: #224f45;
   --color-photo: #185069;
+  --color-ground-yellow: #ffd602;
+  --color-ground-red: #fe7c6e;
+  --color-ground-graphic: #9ddbca;
+  --color-ground-photo: #54cfff;
   --color-sky: #3ebfff;
   --color-scrim: --alpha(#000000 / 20%);
   --color-mint: #90d4c6;
