@@ -65,6 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${barlow.variable} ${fraunces.variable} antialiased`}
     >
       <body>{children}</body>

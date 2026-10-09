@@ -9,7 +9,7 @@ const variants: Record<ContactLinkVariant, string> = {
 
 type ContactLinkProps = {
   variant: ContactLinkVariant;
-  onNavigate?: () => void;
+  onNavigate?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 
 export default function ContactLink({ variant, onNavigate }: ContactLinkProps) {

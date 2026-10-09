@@ -129,6 +129,10 @@
 @layer base {
   html {
     overflow-y: scroll;
+
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
   }
 
   body {

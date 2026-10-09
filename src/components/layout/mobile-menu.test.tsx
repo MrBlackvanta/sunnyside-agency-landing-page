@@ -1,7 +1,7 @@
 import { setMediaMatches } from "@/test/match-media";
 import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import MobileMenu from "./mobile-menu";
 
 const DESKTOP = "(min-width: 64rem)";
@@ -87,6 +87,35 @@ describe("MobileMenu", () => {
     await userEvent.click(screen.getByRole("link", { name: "About" }));
 
     expect(toggle).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("brings the chosen section into view once the page is unsealed", async () => {
+    const { toggle, main } = renderMenu();
+    const services = document.createElement("section");
+    services.id = "services";
+    services.scrollIntoView = vi.fn(() => {
+      expect(main).not.toHaveAttribute("inert");
+      expect(document.body.style.position).toBe("");
+    });
+    main.append(services);
+
+    await userEvent.click(toggle);
+    await userEvent.click(screen.getByRole("link", { name: "Services" }));
+
+    expect(services.scrollIntoView).toHaveBeenCalledOnce();
+  });
+
+  it("leaves the reader where they were when the menu is merely dismissed", async () => {
+    const { toggle, main } = renderMenu();
+    const services = document.createElement("section");
+    services.id = "services";
+    services.scrollIntoView = vi.fn();
+    main.append(services);
+
+    await userEvent.click(toggle);
+    await userEvent.keyboard("{Escape}");
+
+    expect(services.scrollIntoView).not.toHaveBeenCalled();
   });
 
   it("closes when the viewport grows past the desktop header", async () => {

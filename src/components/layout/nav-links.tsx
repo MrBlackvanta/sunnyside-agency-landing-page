@@ -19,7 +19,7 @@ const variants: Record<NavLinksVariant, { list: string; link: string }> = {
 
 type NavLinksProps = {
   variant: NavLinksVariant;
-  onNavigate?: () => void;
+  onNavigate?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 
 export default function NavLinks({ variant, onNavigate }: NavLinksProps) {

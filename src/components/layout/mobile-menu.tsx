@@ -8,6 +8,7 @@ import NavLinks from "./nav-links";
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const pendingTarget = useRef("");
 
   useEffect(() => {
     if (!open) return;
@@ -35,12 +36,22 @@ export default function MobileMenu() {
       style.position = "";
       style.insetInline = "";
       style.top = "";
-      window.scrollTo(0, scrollY);
-      toggle?.focus();
+      const target = pendingTarget.current;
+      pendingTarget.current = "";
+
+      if (target) document.querySelector(target)?.scrollIntoView();
+      else window.scrollTo({ top: scrollY, behavior: "instant" });
+
+      toggle?.focus({ preventScroll: true });
     };
   }, [open]);
 
   const close = () => setOpen(false);
+
+  const navigate = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    pendingTarget.current = event.currentTarget.hash;
+    close();
+  };
 
   const closeOnEscape = (event: React.KeyboardEvent) => {
     if (event.key === "Escape") close();
@@ -77,8 +88,8 @@ export default function MobileMenu() {
           }`}
         >
           <div className="bg-cream absolute -top-6 right-0 h-6.25 w-6 [clip-path:polygon(100%_0,100%_100%,0_100%)]" />
-          <NavLinks variant="menu" onNavigate={close} />
-          <ContactLink variant="menu" onNavigate={close} />
+          <NavLinks variant="menu" onNavigate={navigate} />
+          <ContactLink variant="menu" onNavigate={navigate} />
         </div>
       </div>
     </div>
