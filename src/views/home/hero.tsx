@@ -1,8 +1,20 @@
 import headerDesktop from "@/assets/image-header-desktop.webp";
 import headerMobile from "@/assets/image-header-mobile.webp";
 import { ArrowDownIcon } from "@/components/icons";
+import ReactDOM from "react-dom";
 
 export default function Hero() {
+  ReactDOM.preload(headerMobile.src, {
+    as: "image",
+    media: "not all and (min-width: 48rem)",
+    fetchPriority: "high",
+  });
+  ReactDOM.preload(headerDesktop.src, {
+    as: "image",
+    media: "(min-width: 48rem)",
+    fetchPriority: "high",
+  });
+
   return (
     <section className="v-hero-band bg-sky relative">
       <picture className="max-w-shell absolute inset-0 mx-auto block">
